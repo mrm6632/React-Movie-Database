@@ -8,4 +8,6 @@ function App() {
   );
 }
 
+// "Export" allows this component to be imported elsewhere
+// Each JavaScript file can only export one thing as a "default"
 export default App;
