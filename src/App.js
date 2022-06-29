@@ -1,4 +1,4 @@
-import Game from './Game.js';
+import Game from './javascript/Game.js';
 
 function App() {
   return (
