@@ -1,4 +1,4 @@
-import Game from './javascript/Game.js';
+import Game from "./typescript/Game";
 
 function App() {
   return (
