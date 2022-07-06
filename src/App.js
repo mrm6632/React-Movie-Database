@@ -1,4 +1,10 @@
-import Game from "./typescript/Game";
+import Game from "./functional/typescript/Game";
+
+// Change the import above to change the type e.g
+// import Game from "./functional/javascript/Game";
+// import Game from "./classes/typescript/Game";
+// import Game from "./classes/javascript/Game";
+
 
 function App() {
   return (
