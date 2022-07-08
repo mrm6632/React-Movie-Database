@@ -5,7 +5,6 @@ import Game from "./functional/typescript/Game";
 // import Game from "./classes/typescript/Game";
 // import Game from "./classes/javascript/Game";
 
-
 function App() {
   return (
     <div className="App">

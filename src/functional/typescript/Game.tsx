@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import Board from "./Board";
 import Helper from "./Helper";
 
@@ -6,97 +6,81 @@ interface GameProps {
 
 }
 
-interface GameState {
-  time: number;
-  history: any[];
-  xIsNext: boolean;
-  stepNumber: number;
+interface History {
+  squares: string[]
 }
 
-export default class Game extends React.Component<GameProps, GameState> {
-  constructor(props: GameProps) {
-    super(props);
-    this.state = {
-      time: 1,
-      history: [
-        {
-          squares: Array(9).fill(null)
-        }
-      ],
-      stepNumber: 0,
-      xIsNext: true
-    };
-    setInterval(() => this.setState({ time: this.state.time + 1 }), 1000);
-  }
+const Game: React.FC<GameProps> = props => {
+  const [time, setTime] = useState<number>(0);
+  const [xIsNext, setxIsNext] = useState<Boolean>(true);
+  const [history, setHistory] = useState<History[]>([{ squares: Array(9).fill(null), }]);
+  const [stepNumber, setStepNumber] = useState<number>(0);
 
-  handleClick(i: number) {
-    const history = this.state.history.slice(0, this.state.stepNumber + 1);
-    const current = history[history.length - 1];
+  useEffect(() => {
+    setInterval(() => setTime(time + 1), 1000);
+  })
+
+  const handleClick = (i: number) => {
+    const sliced_history = history.slice(0, stepNumber + 1);
+    const current = sliced_history[sliced_history.length - 1];
     const squares = current.squares.slice();
 
     if (Helper.calculateWinner(squares) || squares[i]) {
       return;
     }
 
-    squares[i] = this.state.xIsNext ? "X" : "O";
+    squares[i] = xIsNext ? "X" : "O";
 
-    this.setState({
-      history: history.concat([
-        {
-          squares: squares
-        }
-      ]),
-      stepNumber: history.length,
-      xIsNext: !this.state.xIsNext
-    });
+    setHistory(history.concat([{ squares: squares }]));
+    setStepNumber(history.length)
+    setxIsNext(!xIsNext);
   }
 
-  jumpTo(step: number) {
-    this.setState({
-      stepNumber: step,
-      xIsNext: (step % 2) === 0
-    });
+  const jumpTo = (step: number) => {
+    setStepNumber(step)
+    setxIsNext((step % 2) === 0);
   }
 
-  render() {
-    const history = this.state.history;
-    const current = history[this.state.stepNumber];
+  const history_copy = history;
+  const current = history_copy[stepNumber];
 
-    const moves = history.map((_, move) => {
-      const desc = move ?
-        'Go to move #' + move :
-        'Go to game start';
-      return (
-        <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
-        </li>
-      );
-    });
-
-    let status;
-    const winner = Helper.calculateWinner(current.squares);
-    if (winner) {
-      status = "Winner: " + winner;
-    } else {
-      status = "Next player: " + (this.state.xIsNext ? "X" : "O");
-    }
-
+  const moves = history.map((_, move) => {
+    const desc = move ?
+      'Go to move #' + move :
+      'Go to game start';
     return (
-      <>
-        <p>Time Played: {this.state.time} seconds</p>
-        <div className="game">
-          <div className="game-board">
-            <Board
-              squares={current.squares}
-              onClick={i => this.handleClick(i)}
-            />
-          </div>
-          <div className="game-info">
-            <div>{status}</div>
-            <ol>{moves}</ol>
-          </div>
-        </div>
-      </>
+      <li key={move}>
+        <button onClick={() => jumpTo(move)}>{desc}</button>
+      </li>
     );
+  });
+
+  let status;
+  const winner = Helper.calculateWinner(current.squares);
+  if (winner) {
+    status = "Winner: " + winner;
+  } else {
+    status = "Next player: " + (xIsNext ? "X" : "O");
   }
+
+  return (
+    <>
+      <p>Time Played: {time} seconds</p>
+      <div className="game">
+        <div className="game-board">
+          <Board
+            squares={current.squares}
+            onClick={i => handleClick(i)}
+          />
+        </div>
+        <div className="game-info">
+          <div>{status}</div>
+          <ol>{moves}</ol>
+        </div>
+      </div>
+    </>
+  );
+
 }
+
+export default Game;

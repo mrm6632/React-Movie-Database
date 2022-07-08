@@ -26,6 +26,9 @@ export default class Game extends React.Component<GameProps, GameState> {
       stepNumber: 0,
       xIsNext: true
     };
+  }
+
+  componentDidMount() {
     setInterval(() => this.setState({ time: this.state.time + 1 }), 1000);
   }
 

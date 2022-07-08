@@ -1,15 +1,14 @@
-import React from 'react';
-import Square from './Square';
+import React from "react";
+import Square from "./Square";
 
 // Declare a class Board that "is" a React component
-const Board = props => {
-
+const Board = (props) => {
   // A helper function that returns a Square component
   // The Square component has properties that we pass in such as the onClick callback
   // i.e When the square is clicked, it will actually activate the onClick function from the Board's parent
-  const renderSquare = i => {
+  const renderSquare = (i) => {
     return <Square value={props.squares[i]} onClick={() => props.onClick(i)} />;
-  }
+  };
 
   // Every React class must have a render() block to return a single element
   // In this case it is the <div> that contains the 9 squares
@@ -32,6 +31,6 @@ const Board = props => {
       </div>
     </div>
   );
-}
+};
 
 export default Board;

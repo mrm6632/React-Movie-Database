@@ -1,13 +1,12 @@
-import React from 'react';
+import React from "react";
 
 // Note that JavaScript does not have types so it's hard to determine what props are until runtime
-const Square = props => {
+const Square = (props) => {
   return (
-    <button
-      className="square"
-      onClick={() => props.onClick()}>
+    <button className="square" onClick={() => props.onClick()}>
       {props.value}
-    </button >)
-}
+    </button>
+  );
+};
 
 export default Square;

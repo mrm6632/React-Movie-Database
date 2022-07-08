@@ -1,5 +1,5 @@
 export default class Helper {
-  static calculateWinner(squares: [[]]) {
+  static calculateWinner(squares: string[]) {
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
