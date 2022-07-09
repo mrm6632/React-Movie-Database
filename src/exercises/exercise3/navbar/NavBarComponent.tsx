@@ -4,7 +4,6 @@ interface NavBarComponentProps {
 
 }
 
-
 const NavBarComponent: React.FC<NavBarComponentProps> = (props) => {
 
   return (
