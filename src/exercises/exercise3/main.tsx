@@ -3,7 +3,7 @@ import Blog from "./blog/Blog";
 import FooterComponent from "./footer/FooterComponent";
 import NavBarComponent from "./navbar/NavBarComponent";
 import FormComponent from "./form/FormComponent";
-import "./index.scss";
+import "./main.scss";
 
 const BlogApp = () => {
 

@@ -6,7 +6,7 @@
 // import Game from "./classes/javascript/Game";
 
 // Following are to run the exercise demos
-import BlogApp from "./exercises/exercise3/BlogApp";
+import BlogApp from "./exercises/exercise3/main";
 
 function App() {
   return (
