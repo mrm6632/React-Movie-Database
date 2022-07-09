@@ -4,7 +4,6 @@ interface FooterComponentProps {
 
 }
 
-
 const FooterComponent: React.FC<FooterComponentProps> = (props) => {
 
   return (
