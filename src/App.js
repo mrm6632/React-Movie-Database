@@ -6,12 +6,13 @@
 // import Game from "./classes/javascript/Game";
 
 // Following are to run the exercise demos
-import BlogApp from "./exercises/exercise3/main";
+// import BlogApp from "./exercises/exercise3/main";
+import Movie from "./exercises/exercise5/exercise";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <BlogApp />
+      <Movie />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 
-## Exercise 2
+## Exercise 3
 ### Task: Create a list of blogs with functionalities to add and delete blogs. App needs to be in TypeScript and functional components.
 
 Steps:
