@@ -7,12 +7,12 @@
 
 // Following are to run the exercise demos
 // import BlogApp from "./exercises/exercise3/main";
-import Movie from "./exercises/exercise5/exercise";
+import MovieDatabase from "./exercises/exercise4/exercise";
 
 const App = () => {
   return (
     <div className="App">
-      <Movie />
+      <MovieDatabase />
     </div>
   );
 }

@@ -10,4 +10,4 @@ Repo has four suites.
 * JavaScript Functional Components
 * TypeScript Functional Components
 
-In addition, the exercises folder contain snippets of code to practice. Some exercises are more challenging than others such as Exercise 5 to create a movie database.
+In addition, the exercises folder contain snippets of code to practice. Some exercises are more challenging than others such as Exercise 4 to create a movie database.
