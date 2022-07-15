@@ -1,46 +1,23 @@
 import "exercise.css";
-import { Component } from 'react';
-import { Route } from '../utils/custom-router';
-import fetchUsersList from '../utils/utils';
-import User from './User';
-import UsersList from './UsersList';
+import ImageList from "ImageList";
+import Navigation from "Navigation";
+import NotFound from "NotFound";
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-const getAllUsers = () => 'https://jsonplaceholder.typicode.com/users';
-
-class App extends Component {
-  state = {
-    users: []
-  };
-
-  componentDidMount() {
-    fetchUsersList(getAllUsers()).then(users => {
-      this.setState({ users });
-    });
-  }
-
-  render() {
-    return this.state.users.length ? (
-      <div className="App">
-        <Route
-          exact
-          path="/"
-          render={() => <UsersList users={this.state.users} />}
-        />
-        {this.state.users.map(user => (
-          <Route
-            key={user.id}
-            exact
-            path={`/${user.id}`}
-            render={() => <User user={user} />}
-          />
-        ))}
-      </div>
-    ) : (
-      <div>
-        <p>Loading...</p>
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <React.Fragment>
+      <BrowserRouter>
+        <Navigation />
+        <Switch>
+          <Route path="/" element={<ImageList />} />
+          <Route path="/pictures" element={<ImageList />} />
+          <Route path="*" element={<NotFound />} />
+        </Switch>
+      </BrowserRouter>
+    </React.Fragment>
+  )
 }
 
 export default App;
