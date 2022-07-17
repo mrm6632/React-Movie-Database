@@ -1,27 +1,25 @@
 import { useState } from "react";
 import Blog from "./blog/Blog";
 import FooterComponent from "./footer/FooterComponent";
-import NavBarComponent from "./navbar/NavBarComponent";
 import FormComponent from "./form/FormComponent";
 import "./main.scss";
+import NavBarComponent from "./navbar/NavBarComponent";
 
 const BlogApp = () => {
 
   const [blogs, setBlogs] = useState<Blog[]>([{ name: "Blog 1", content: "This is a very long text" }, { name: "Blog 2", content: "Amazing! 10 out of 10" }]);
   const [active, setActive] = useState<number>();
 
-  const handleBlogCreation = (event: any) => {
-    event.preventDefault();
-
-    const nameField = document.getElementById("nameField") as HTMLInputElement | null;
-    const contentField = document.getElementById("contentField") as HTMLInputElement | null;
-    const name = nameField!.value;
-    const content = contentField!.value;
-    if (name && content) {
-      const newBlog: Blog = { name, content }
-      setBlogs([...blogs, newBlog]);
-      nameField!.value = "";
-      contentField!.value = "";
+  const handleBlogCreation = (nameField: HTMLInputElement | null, contentField: HTMLTextAreaElement | null) => {
+    if (nameField && contentField) {
+      const name = nameField.value;
+      const content = contentField.value;
+      if (name && content) {
+        const newBlog: Blog = { name, content }
+        setBlogs([...blogs, newBlog]);
+        nameField.value = "";
+        contentField.value = "";
+      }
     }
   }
 
