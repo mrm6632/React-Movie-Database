@@ -6,7 +6,7 @@ const NonRefExample = () => {
     const nameField =
       (document.getElementById("name") as HTMLInputElement) || undefined;
     const contentField =
-      (document.getElementById("name") as HTMLInputElement) || undefined;
+      (document.getElementById("content") as HTMLInputElement) || undefined;
 
     if (nameField && contentField) {
       const name = nameField.value;

@@ -5,10 +5,12 @@
 import { useRef } from "react";
 
 const RefExample = () => {
-  const handleSubmit = (
-    nameField: HTMLInputElement | null,
-    contentField: HTMLTextAreaElement | null
-  ) => {
+  const nameRef = useRef<HTMLInputElement | null>(null);
+  const contentRef = useRef<HTMLTextAreaElement | null>(null);
+
+  const handleSubmit = () => {
+    const nameField = nameRef.current;
+    const contentField = contentRef.current;
     if (nameField && contentField) {
       const name = nameField.value;
       const content = contentField.value;
@@ -22,15 +24,12 @@ const RefExample = () => {
     }
   };
 
-  const nameRef = useRef<HTMLInputElement | null>(null);
-  const contentRef = useRef<HTMLTextAreaElement | null>(null);
-
   return (
     <section>
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          handleSubmit(nameRef.current, contentRef.current);
+          handleSubmit();
         }}
       >
         <label>Blog Name</label>

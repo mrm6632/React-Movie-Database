@@ -10,7 +10,7 @@ import "./index.css";
 
 // Following are to run the exercise demos
 // import Demo from "./exercises/exercise3/main";
-// import Demo from "./exercises/exercise4/exercise";
+import Demo from "./exercises/exercise4/exercise";
 // import Demo from "./exercises/exercise5/exercise";
 
 // Following are examples of React hooks and router
@@ -19,7 +19,12 @@ import "./index.css";
 // import Demo from "./hooks/useStateExample";
 // import Demo from "./hooks/useRefExample";
 // import Demo from "./hooks/useContextExample";
-import Demo from "./hooks/useCallbackExample";
+// import Demo from "./hooks/useCallbackExample";
+// import Demo from "./hooks/useMemoExample";
+
+// import Demo from "./hooks/useNonRefExample";
+// import Demo from "./hooks/useNonContextExample";
+// import Demo from "./hooks/useNonMemoExample";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
