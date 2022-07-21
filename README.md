@@ -1,19 +1,22 @@
-## Exercise 5
+## React Movie App
 ### Task: Create a movie database
 
 Steps:
 
-1. Create a brand new React app using create-react-app
-1. Create an array of objects where each object is a blog that has two properties, a name and a text content
-1. Use useState to maintain this array
-1. Use an interface to structure the two required properties
-1. Map through the array and render a list of blogs to be displayed
-1. Have a form with a text box for name and a text box for content and a button to create a new blog
-Clicking on the button to create a new blog should display all blogs.
-1. When I click on a blog item in this list, it should be highlighted
-1. Have a delete button to delete selected blogs
-
-Challenges (Optional):
-1. Use SCSS to style
-1. Click on the blog item to go on the blog page to read more
-1. Have a navigation bar and a footer
+Prerequisites:
+- Github
+- React and React Router
+- SCSS
+- Public API of choice
+- Postman (optional)
+ 
+Instructions:
+1. Create React App using TypeScript template. Everything needs to be done in functional component.
+2. SCSS is a requirement.
+3. Mandatory to use Github (DX UTC) for collaboration.
+4. Display a list of movies.
+5. Clicking on the movie from the movie list will take me to the movie page with information on the movie release date, title, description, and vote count.
+6. Clicking on the site logo will redirect me back to the home page.
+7. Optional - Support genre filtering
+8. Implement a Router for a few pages such as a Home page and an About page.
+9. When I try to enter an invalid URL, I am taken to a custom 404 page.
