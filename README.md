@@ -1,13 +1,19 @@
-# Tic Tac Toe
+## Exercise 5
+### Task: Create a movie database
 
-Mini project(s) to mentor engineers on React and its ecosystem. Repo was created using create-react-app and covers state management, React hooks, prop drilling, and many more React fundamentals.
+Steps:
 
-JavaScript code was written from React tutorial (https://reactjs.org/tutorial/tutorial.html) and converted to TypeScript with additional features.
+1. Create a brand new React app using create-react-app
+1. Create an array of objects where each object is a blog that has two properties, a name and a text content
+1. Use useState to maintain this array
+1. Use an interface to structure the two required properties
+1. Map through the array and render a list of blogs to be displayed
+1. Have a form with a text box for name and a text box for content and a button to create a new blog
+Clicking on the button to create a new blog should display all blogs.
+1. When I click on a blog item in this list, it should be highlighted
+1. Have a delete button to delete selected blogs
 
-Repo has four suites.
-* JavaScript Classes
-* TypeScript Classes
-* JavaScript Functional Components
-* TypeScript Functional Components
-
-In addition, the exercises folder contain snippets of code to practice. Some exercises are more challenging than others such as Exercise 4 to create a movie database.
+Challenges (Optional):
+1. Use SCSS to style
+1. Click on the blog item to go on the blog page to read more
+1. Have a navigation bar and a footer
