@@ -11,10 +11,10 @@ const App = () => {
     useEffect(() => {
         const apiUrl = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${KEY}&page=1`;
         showMovies(apiUrl);
-    }, []);
+    }, [KEY]);
 
     const IMGPATH = "https://image.tmdb.org/t/p/w1280";
-    const SEARCHAPI =
+    const SEARCHAPI = 
         `https://api.themoviedb.org/3/search/movie?&api_key=${KEY}&query=`;
 
     const handleSubmit = (event) => {
