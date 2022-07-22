@@ -1,27 +1,27 @@
 import {
-  BrowserRouter as Router,
-  NavLink,
-  Route,
-  Routes,
-} from "react-router-dom";
-import Home from "./HomePage";
-import About from "./AboutPage";
-import NotFound from "./NotFoundPage";
+    BrowserRouter as Router,
+    NavLink,
+    Route,
+    Routes,
+  } from "react-router-dom";
+import Home from './HomePage';
+import About from './AboutPage';
+import NotFound from './NotFoundPage';
 
 const NavBar = () => {
-  return (
+    return (
     <ul>
-      <li>
+        <li>
         <NavLink to="/">Home</NavLink>
-      </li>
-      <li>
+        </li>
+        <li>
         <NavLink to="/About">About</NavLink>
-      </li>
-      <li>
+        </li>
+        <li>
         <NavLink to="/Not Found">NotFound</NavLink>
-      </li>
+        </li>
     </ul>
-  );
+    )
 };
 
 export default NavBar;
