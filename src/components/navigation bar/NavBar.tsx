@@ -7,7 +7,6 @@ import {
 import Home from "./HomePage";
 import About from "./AboutPage";
 import NotFound from "./NotFoundPage";
-import "./styles/NavBar.scss";
 
 const NavBar = () => {
     return (
