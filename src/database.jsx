@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import "./components/styles/MovieDatabase.scss";
+import "./components/styles/Database.scss";
 
-const App = () => {
+const DataBase = () => {
     const KEY = process.env.REACT_APP_TMDB_API_KEY;
 
     const [search, setSearch] = useState("");
@@ -66,4 +66,4 @@ const App = () => {
     );
 }
 
-export default App;
+export default DataBase;
