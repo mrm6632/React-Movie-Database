@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import "./exercise.scss";
+import "./components/styles/MovieDatabase.scss";
 
 const App = () => {
     const KEY = process.env.REACT_APP_TMDB_API_KEY;
