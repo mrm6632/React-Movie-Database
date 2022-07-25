@@ -4,25 +4,36 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    
   }
   
   li {
     float: left;
+    justify-content: space-between;
   }
   
   li a {
-    display: block;
+    display: flex;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
-  
-  /* Change the link color to #111 (black) on hover */
-  li a:hover {
-    background-color: #111;
+    align-items: center;
+
+    &.active {
+      color: #111;
+    }
   }
 
-  .notFound {
-    background-color: rgb(124, 124, 249);
+  li a:hover {
+    background-color: grey;
+  }
+
+  .nav-right {
+    float: right;
+  }
+
+  .logo-image {
+    width: 100%;
+    max-width: 30px;
   }

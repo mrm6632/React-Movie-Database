@@ -1,0 +1,33 @@
+.not-found-div {
+  text-align: center;
+  background-image: url(/components/images/space.jpeg);
+  background-size: cover;
+  width: 100%;
+  height: 100%
+}
+
+.number {
+  font-size: 90px;
+  color: #e85e00;
+  padding: 25px 50px;
+}
+
+.page,
+.oops {
+  font-size: 60px;
+  color: white;
+  padding: 25px 50px;
+}
+
+.button {
+  text-align: center;
+  background-color: #e85e00;
+  padding: 10px 24px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  border-radius: 15px;
+  position: absolute;
+  margin-left: -85px;
+  bottom: 0;
+}

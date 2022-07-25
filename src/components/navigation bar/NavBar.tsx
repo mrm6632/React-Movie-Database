@@ -1,27 +1,27 @@
 import {
-    BrowserRouter as Router,
-    NavLink,
-    Route,
-    Routes,
-  } from "react-router-dom";
-import Home from "./HomePage";
-import About from "./AboutPage";
-import NotFound from "./NotFoundPage";
+    NavLink
+} from "react-router-dom";
 
 const NavBar = () => {
-    return (
+  return (
+
     <ul>
-        <li>
+      <li>
         <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
+      </li>
+      <li>
         <NavLink to="/About">About</NavLink>
-        </li>
+      </li>
+      <div className="nav-right">
         <li>
-        <NavLink to="/404">Not Found</NavLink>
+            <NavLink to="/"><img className="logo-image" src={require('../images/logo.png')} alt="logo"/></NavLink>
         </li>
+      </div>
+      <li>
+        <NavLink to="*"></NavLink>
+      </li>
     </ul>
-    )
+  );
 };
 
 export default NavBar;
