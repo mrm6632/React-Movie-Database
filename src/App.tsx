@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import About from "./components/navigation bar/AboutPage";
-import NavBar from "./components/navigation bar/NavBar";
-import NotFound from "./components/navigation bar/NotFoundPage";
-import DataBase from "./database";
+import Movie from "./components/movie/MoviePage";
+import About from "./components/navigation_bar/AboutPage";
+import NavBar from "./components/navigation_bar/NavBar";
+import NotFound from "./components/navigation_bar/NotFoundPage";
 import "./components/styles/App.scss";
-import Movie from "./components/movie/moviePage";
+import DataBase from "./database";
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<DataBase />} />
           <Route path="/about" element={<About />} />
+          <Route path="/nick/:id" element={<Movie />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/:id" element={<Movie />} />
         </Routes>
       </div>
     </Router>
