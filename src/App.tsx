@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import MovieInfo from "./components/movie/MovieInfo";
 import About from "./components/navigation_bar/AboutPage";
 import NavBar from "./components/navigation_bar/NavBar";
@@ -7,7 +7,7 @@ import DataBase from "./database";
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <div className="App">
         <NavBar />
         <Routes>
@@ -17,7 +17,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
