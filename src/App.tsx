@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Movie from "./components/movie/MoviePage";
+import MovieInfo from "./components/movie/MovieInfo";
 import About from "./components/navigation_bar/AboutPage";
 import NavBar from "./components/navigation_bar/NavBar";
 import NotFound from "./components/navigation_bar/NotFoundPage";
@@ -14,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<DataBase />} />
           <Route path="/about" element={<About />} />
-          <Route path="/nick/:id" element={<Movie />} />
+          <Route path="/movies/:id" element={<MovieInfo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

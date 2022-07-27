@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./components/styles/Database.scss";
+import MovieInfo from "./components/movie/MovieInfo";
 
-const DataBase = () => {
+const DataBase = (props) => {
   const KEY = process.env.REACT_APP_TMDB_API_KEY;
 
   const [search, setSearch] = useState("");
@@ -33,7 +34,11 @@ const DataBase = () => {
     const array = [];
 
     data.results.forEach((element) => {
-      array.push({ id: element.id, title: element.title, poster: element.poster_path });
+      array.push({
+        id: element.id,
+        title: element.title,
+        poster: element.poster_path,
+      });
     });
     console.log(array);
     setMovies(array);
@@ -55,8 +60,9 @@ const DataBase = () => {
       </header>
       <main>
         {movies.map((movie, index) => {
+          <MovieInfo selectedMovie={movie.id} />
           return (
-            <Link to={`nick/${movie.id}`} key={index}>
+            <Link to={`movies/${movie.id}`} key={index} >
               <div>
                 <img src={IMGPATH + movie.poster} alt="" />
                 <h2>{movie.title}</h2>
