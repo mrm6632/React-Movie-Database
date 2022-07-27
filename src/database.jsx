@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
+import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
 import MovieInfo from "./components/movie/MovieInfo";
 import "./components/styles/Database.scss";
-import ReactPaginate from "react-paginate";
 
 const DataBase = (props) => {
   const KEY = process.env.REACT_APP_TMDB_API_KEY;
 
   const [search, setSearch] = useState("");
   const [movies, setMovies] = useState([]);
-  const [page, setPage] = useState('1')
-
-  // let currentPage=1;
+  const [page, setPage] = useState("1");
 
   useEffect(() => {
     const apiUrl = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${KEY}&page=${page}`;
@@ -49,14 +47,11 @@ const DataBase = (props) => {
   };
 
   const handlePageClick = (data) => {
-    if (data.selected+1 !== Number(page)) {
-      //let newPage = `${data.selected+1}`
-
-      setPage(data.selected+1)
-      
+    if (data.selected + 1 !== Number(page)) {
+      setPage(data.selected + 1);
     }
-  }
-  console.log(page)
+  };
+
   return (
     <React.Fragment>
       <header>
@@ -73,7 +68,7 @@ const DataBase = (props) => {
       </header>
       <main>
         {movies.map((movie, index) => {
-          <MovieInfo selectedMovie={movie.id} />;
+          <MovieInfo selectedMovie={movie.id} pageNum={page} />;
           return (
             <Link to={`movies/${movie.id}`} key={index}>
               <div>
@@ -85,10 +80,7 @@ const DataBase = (props) => {
         })}
       </main>
       <div className="pageNav">
-        <ReactPaginate 
-        pageCount={4}
-        onPageChange = {handlePageClick}
-        />
+        <ReactPaginate pageCount={4} onPageChange={handlePageClick} />
       </div>
     </React.Fragment>
   );
