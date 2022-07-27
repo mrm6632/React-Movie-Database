@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "../styles/MovieInfo.scss";
 
 const MovieInfo = (props) => {
@@ -26,7 +26,6 @@ const MovieInfo = (props) => {
       poster: data.poster_path,
       language: data.original_language,
       overview: data.overview,
-      popularity: data.popularity,
       vote: data.vote_average,
       release: data.release_date,
     });
@@ -34,15 +33,24 @@ const MovieInfo = (props) => {
 
   return (
     <div className="movie-info-div">
+      <div className="cover-img">
+        <img src={IMGPATH + movieInfo.poster} alt="" />
+      </div>
       <div className="info-column">
         <h1 className="title">{movieInfo.title}</h1>
-        <p className="movie-info">Release Data: {movieInfo.release}</p>
-        <p className="movie-info">Language: {movieInfo.language}</p>
-        <p className="movie-info">Overview: {movieInfo.overview}</p>
-        <p className="movie-info">Vote: {movieInfo.vote}/10</p>
-        <p className="movie-info">Popularity: {movieInfo.popularity}</p>
+        <p className="movie-info">
+          Release Data: <info>{movieInfo.release}</info>
+        </p>
+        <p className="movie-info">
+          Language: <info>{movieInfo.language}</info>
+        </p>
+        <p className="movie-info">
+          Overview: <info>{movieInfo.overview}</info>
+        </p>
+        <p className="movie-info">
+          Vote: <info>{movieInfo.vote}/10</info>
+        </p>
       </div>
-      <img className="cover-img" src={IMGPATH + movieInfo.poster} alt="" />
     </div>
   );
 };

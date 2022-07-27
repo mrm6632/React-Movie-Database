@@ -1,7 +1,5 @@
 import React from "react";
-import {
-  NavLink
-} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../images/space.jpeg";
 import "../styles/NavBar.scss";
 import "../styles/NotFound.scss";
