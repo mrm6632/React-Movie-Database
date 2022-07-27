@@ -79,9 +79,9 @@ const DataBase = (props) => {
           );
         })}
       </main>
-      <div className="pageNav">
-        <ReactPaginate pageCount={4} onPageChange={handlePageClick} />
-      </div>
+      <footer>
+        <ReactPaginate pageCount={8} onPageChange={handlePageClick} />
+      </footer>
     </React.Fragment>
   );
 };
