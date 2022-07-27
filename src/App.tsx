@@ -3,7 +3,7 @@ import MovieInfo from "./components/movie/MovieInfo";
 import About from "./components/navigation_bar/AboutPage";
 import NavBar from "./components/navigation_bar/NavBar";
 import NotFound from "./components/navigation_bar/NotFoundPage";
-import "./components/styles/App.scss";
+// import "./components/styles/App.scss";
 import DataBase from "./database";
 
 function App() {
